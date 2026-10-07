@@ -27,24 +27,23 @@ nghĩa là model tốt hơn, nhưng `wrong_lr` có loss giảm đều mà target
 
 **4. Bạn dùng AI assistant vào việc gì trong lab? Chỗ nào nó sai?**
 
-Tôi dùng Claude (trong VS Code) khá nhiều: clone repo, tóm tắt yêu cầu lab, giải thích các thư
-viện cần cài, hướng dẫn chạy trên Colab, đọc file kết quả, phân tích số liệu và viết phần lớn
-báo cáo. Tôi đã đọc lại và đối chiếu các con số với `results/`.
+Tôi dùng Claude (trong VS Code): tóm tắt yêu cầu lab, giải thích các thư
+viện cần cài, hướng dẫn chạy trên Colab, đọc file kết quả, phân tích số liệu.
 
 Những chỗ nó chưa đúng hoặc chưa lường trước:
-- Nó ước tính pipeline mất khoảng 100–130 phút (theo số liệu trong README), thực tế chỉ khoảng
-  52 phút.
-- Nó gợi ý chạy trên extension Colab của VS Code và thêm ô tải file về, nhưng chính nó cũng không
-  chắc `files.download()` có chạy được trong VS Code không. Cuối cùng tôi chuyển sang Colab
-  trên trình duyệt.
-- Nó không lường trước việc máy Colab bị reset, nên đoạn kiểm tra chạy sau đó báo lỗi không tìm
-  thấy thư mục và kết quả lần chạy đó bị mất.
-- Bản nháp báo cáo đầu tiên được viết từ log của lần chạy bị mất, nên có vài nhận định phải sửa
-  khi có kết quả thật — ví dụ ban đầu ghi `attn_only` thua `correct` một trường, nhưng ở lần chạy
-  nộp bài thì hai run hoà nhau (0.970).
+- **Hướng dẫn chạy Colab:** nó ước tính pipeline mất khoảng 100–130 phút (theo số liệu trong
+  README), thực tế chỉ khoảng 52 phút.
+- **Hướng dẫn chạy Colab:** nó gợi ý chạy bằng extension Colab trong VS Code, nhưng chính nó cũng
+  không chắc tải file kết quả về có được không. Cuối cùng tôi chuyển sang Colab trên trình duyệt.
+- **Hướng dẫn chạy Colab:** nó không lường trước việc máy Colab bị reset, nên kết quả của một lần
+  chạy đầy đủ bị mất trước khi kịp tải về.
+- **Phân tích số liệu:** nhận xét ban đầu của nó dựa trên log của lần chạy bị mất, cho rằng
+  `attn_only` thua `correct` một trường. Khi đọc file kết quả của lần chạy nộp bài thì hai run
+  thực ra hoà nhau (0.970), nên phải sửa lại.
 
-Có một chỗ tôi tưởng nó sai nhưng hoá ra nó đúng: tôi từng hiểu README là được nộp bản
-`EVAL_LIMIT=8`, nó chỉ ra trong code và `verify.py` rằng bản nộp phải chấm đủ tập eval.
+Có một chỗ tôi tưởng nó sai nhưng hoá ra nó đúng: khi tóm tắt yêu cầu lab, tôi từng hiểu README
+là được nộp bản `EVAL_LIMIT=8`, nó chỉ ra trong code và `verify.py` rằng bản nộp phải chấm đủ
+tập eval.
 
 **5. Nếu ngày mai phải fine-tune cho một khách hàng thật, bước đầu tiên bạn làm là gì?**
 
