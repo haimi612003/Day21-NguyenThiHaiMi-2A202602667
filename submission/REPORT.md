@@ -259,4 +259,4 @@ thêm ticket "Khi nào tiện" đa dạng hơn (đặt ở vị trí khác trong
 - [ ] B2 dataset miền riêng (`data/CUSTOM_DATASET.md`)
 - [ ] B3 reasoning-trace collapse (hai `MASK_MODE`, kèm `valid_trace_rate`)
 - [ ] B4 quét rank có kiểm soát
-- [ ] B5 HuggingFace Hub — link:
+- [x] B5 HuggingFace Hub — link: https://huggingface.co/HMIne/lab21-qwen3.5-4b-cskh-triage-lora
